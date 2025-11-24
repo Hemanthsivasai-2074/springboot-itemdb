@@ -1,0 +1,15 @@
+<configuration>
+  <springProperty scope="context" name="user" source="user.name"/>
+
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>
+        %d{HH:mm:ss} %highlight(%-5level) [%X{user}] %cyan(%logger{36}) - %msg%n
+      </pattern>
+    </encoder>
+  </appender>
+
+  <root level="INFO">
+    <appender-ref ref="CONSOLE"/>
+  </root>
+</configuration>
